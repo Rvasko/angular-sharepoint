@@ -1,0 +1,24 @@
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+<acript.src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+<script src="http://sp2013/sites/dev/strategy/SiteAssets/Includes/spApp.js"></script>
+
+<div ng-app="spApp">
+	<div ng-controller="spListCtrl">
+		<table width="100%" cellpadding="10" cellspacing="2" class="measure-table">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Title</th>
+					<thTarget Value</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="measure in Measures">
+				<td class="align-center">{{measure.Id}}</td>
+				<td class="align-center">{{measure.Title}}</td>
+				<td class="align-center">{{measure.Target_x0020_Value}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
