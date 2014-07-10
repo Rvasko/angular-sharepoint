@@ -13,6 +13,44 @@ spApp.controller('spListCtrl', function($scope, $http) {
 	});
 });
 
+spApp.directive('jqGrid', function ($compile) {
+    return function (scope, element, attrs) {
+        // apply the plugin
+        var jqGrid = element.jqGrid({
+            //data:  [{ id: 1,  amount: 200}],
+            datatype: "local",
+            height: 400,
+            colNames: ['ID', 'KPI', 'Taget Value'],
+            colModel: [{
+                name: 'Id',
+                index: 'Id',
+                width: 60
+            }, {
+                name: 'Title',
+                index: 'Title',
+                width: 500
+            },{ 
+				name: 'Target_x0020_Value',
+				index: 'Target_x0020_Value',
+				width: 60
+			}],
+            caption: "Performance Measures"
+        });
+        scope.$watch(attrs.uiItems, function (values) {
+            // watch for changes
+            var val = values || null;
+            if (val) {
+                jqGrid.setGridParam({
+                    'data': val
+                }).trigger('reloadGrid');
+                var element = $compile('<p>{{total}}</p>')(scope);
+                console.log(element);
+            }
+
+        }, true);
+    };
+});
+
 function GetSiteUrl() {
 
 	var urlParts = document.location.href.split(".");

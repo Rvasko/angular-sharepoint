@@ -1,10 +1,16 @@
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
-<acript.src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+<link type="text/css" href="http://sp2013/sites/dev/strategy/SiteAssets/scripts/jqueryui/jquery-ui.css" rel="stylesheet" />
+<script src="http://sp2013/sites/dev/strategy/SiteAssets/scripts/jquery-1.10.2.min.js"></script>
+<script src="http://sp2013/sites/dev/strategy/SiteAssets/scripts/angular.min.js"></script>
+<acript.src="http://sp2013/sites/dev/strategy/SiteAssets/scripts/jquery-ui-1.8.16.custom.min.js"></script>
 <script src="http://sp2013/sites/dev/strategy/SiteAssets/Includes/spApp.js"></script>
+<script src="http://sp2013/sites/dev/strategy/SiteAssets/scripts/jqgrid/js/jquery.jqGrid.min.js"></script>
+<script src="http://sp2013/sites/dev/strategy/SiteAssets/scripts/jqgrid/js/i18n/grid.locale-en.js"></script>
+
 
 <div ng-app="spApp">
 	<div ng-controller="spListCtrl">
-		<table width="100%" cellpadding="10" cellspacing="2" class="measure-table">
+		<table id="someID" jq-grid ui-items="Measures"></table>
+		<!-- <table width="100%" cellpadding="10" cellspacing="2" class="measure-table">
 			<thead>
 				<tr>
 					<th>Id</th>
@@ -19,6 +25,6 @@
 				<td class="align-center">{{measure.Target_x0020_Value}}</td>
 				</tr>
 			</tbody>
-		</table>
+		</table> -->
 	</div>
 </div>
